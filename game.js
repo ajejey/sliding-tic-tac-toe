@@ -192,13 +192,14 @@ class SlidingTicTacToe {
             });
         }
         
-        // Share modal
-        if (this.shareBtn) {
-            this.shareBtn.addEventListener('click', () => {
+        // Share modal (handle both ID-based and class-based buttons)
+        const shareButtons = document.querySelectorAll('#shareBtn, .share-btn-trigger');
+        shareButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
                 this.shareModal.classList.add('active');
                 this.trackEvent('modal_open', 'share');
             });
-        }
+        });
         
         // Privacy modal
         if (privacyLink && privacyModal) {
