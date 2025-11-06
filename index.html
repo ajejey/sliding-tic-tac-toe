@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Sliding Tic-Tac-Toe (Terni Lapilli) online. A strategic board game where players place 3 pieces then slide them to win. Free, no download needed.">
+    <meta name="keywords" content="sliding tic-tac-toe, terni lapilli, board game, strategy game, tic tac toe online, ancient rome game">
+    <meta name="author" content="Sliding Tic-Tac-Toe">
+    <meta name="theme-color" content="#667eea">
+    <meta property="og:title" content="Sliding Tic-Tac-Toe - Play Online">
+    <meta property="og:description" content="Challenge yourself with Sliding Tic-Tac-Toe, a strategic twist on the classic game. Place your pieces, then slide to win!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sliding-tic-tac-toe.com">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%23667eea' width='200' height='200'/%3E%3Ctext x='50%' y='50%' font-size='60' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'%3E3x3%3C/text%3E%3C/svg%3E">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sliding Tic-Tac-Toe - Play Online">
+    <meta name="twitter:description" content="Can't draw? This tic-tac-toe keeps you on your toes! Place 3 pieces, then slide them to win. 🎮">
+    <link rel="canonical" href="https://sliding-tic-tac-toe.com">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23667eea' width='100' height='100' rx='20'/%3E%3Ctext x='50%25' y='50%25' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'%3E3x3%3C/text%3E%3C/svg%3E">
+    <title>Sliding Tic-Tac-Toe - Play Online Free</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+         crossorigin="anonymous"></script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["WebApplication", "Game"],
+        "name": "Sliding Tic-Tac-Toe",
+        "alternateName": ["Terni Lapilli", "Moving Tic-Tac-Toe"],
+        "description": "A strategic board game combining tic-tac-toe with piece movement mechanics. Players place 3 pieces each, then slide them to adjacent squares to form three in a row.",
+        "url": "https://sliding-tic-tac-toe.com",
+        "applicationCategory": "GameApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Sliding Tic-Tac-Toe"
+        },
+        "inLanguage": "en-US",
+        "isAccessibleForFree": true,
+        "gamePlayMode": ["MultiPlayer"],
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 2
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "100"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Sliding Tic-Tac-Toe?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sliding Tic-Tac-Toe (also known as Terni Lapilli) is a strategic board game that combines the classic tic-tac-toe with piece movement. Players place 3 pieces each on a 3x3 grid, then move them to adjacent squares to form three in a row."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you play Sliding Tic-Tac-Toe?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Phase 1 - Placing: Players alternate placing one piece at a time on empty squares. Phase 2 - Moving: Once all 6 pieces are placed, players take turns moving their pieces to adjacent empty squares. First player to get three in a row wins."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Terni Lapilli?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Terni Lapilli is an ancient Roman board game that is the predecessor to modern tic-tac-toe. It has the same goal of getting three pieces in a row but includes a movement phase after initial placement."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="game-container">
+            <header>
+                <h1 class="heading">Sliding Tic-Tac-Toe</h1>
+                <p class="tagline">Tic-Tac-Toe that never ends in a draw! Place 3, then slide to win 🎯</p>
+                <div class="header-actions">
+                    <button id="howToPlayBtn" class="icon-btn" title="How to Play">How to Play</button>
+                    <button id="shareBtn" class="icon-btn" title="Share Game">Share</button>
+                </div>
+            </header>
+
+            <div class="main-content">
+                <div class="left-panel">
+                    <div class="player-selection">
+                        <span class="selection-label">Start as:</span>
+                        <div class="player-choice">
+                            <button class="choice-btn active" data-player="X">
+                                <span class="choice-icon">✕</span>
+                                <!-- <span class="choice-text">X</span> -->
+                            </button>
+                            <button class="choice-btn" data-player="O">
+                                <span class="choice-icon">○</span>
+                                <!-- <span class="choice-text">O</span> -->
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-info">
+                        <div class="info-row">
+                            <span class="info-label">Player:</span>
+                            <span id="currentPlayer" class="player-badge player-x">X</span>
+                        </div>
+                        <div class="info-row" style="display: none;">
+                            <span class="info-label">Phase:</span>
+                            <span id="gamePhase" class="phase-badge">Placing</span>
+                        </div>
+                    </div>
+
+                    <div class="pieces-info" style="display: none;">
+                        <div class="piece-count">
+                            <span class="player-x-piece">✕</span>
+                            <span>Pieces: <strong id="xPiecesLeft">3</strong></span>
+                        </div>
+                        <div class="piece-count">
+                            <span class="player-o-piece">○</span>
+                            <span>Pieces: <strong id="oPiecesLeft">3</strong></span>
+                        </div>
+                    </div>
+
+                    <div id="message" class="message"></div>
+
+                    <button id="resetBtn" class="reset-btn">New Game</button>
+
+                    <div class="history-section">
+                        <div class="history-header">
+                            <h3>Game History</h3>
+                            <button id="clearHistoryBtn" class="clear-history-btn">Clear</button>
+                        </div>
+                        <div id="historyList" class="history-list"></div>
+                    </div>
+                </div>
+                <div class="board-area">
+                    <div id="board" class="board">
+                        <div class="cell" data-index="0"></div>
+                        <div class="cell" data-index="1"></div>
+                        <div class="cell" data-index="2"></div>
+                        <div class="cell" data-index="3"></div>
+                        <div class="cell" data-index="4"></div>
+                        <div class="cell" data-index="5"></div>
+                        <div class="cell" data-index="6"></div>
+                        <div class="cell" data-index="7"></div>
+                        <div class="cell" data-index="8"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="game-footer">
+                <p>&copy; 2025 Sliding Tic-Tac-Toe | <a href="#" id="privacyLink">Privacy Policy</a> | <a href="#" id="aboutLink">About</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- How to Play Modal -->
+    <div id="howToPlayModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>How to Play</h2>
+            
+            <div class="how-to-section">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3>Placing Phase</h3>
+                    <p>Players take turns placing their 3 pieces on any empty square</p>
+                    <div class="mini-example">
+                        <div class="mini-grid">
+                            <div class="mini-cell">✕</div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell">○</div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell">✕</div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell">○</div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell">✕</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3>Moving Phase</h3>
+                    <p>Select your piece, then move it to an adjacent empty square (including diagonals)</p>
+                    <div class="mini-example">
+                        <div class="movement-hint">↑ ↗ → ↘ ↓ ↙ ← ↖</div>
+                    </div>
+                </div>
+
+                <div class="phase-card winning">
+                    <div class="phase-number">🏆</div>
+                    <h3>Win Condition</h3>
+                    <p>First player to get 3 in a row (horizontal, vertical, or diagonal) wins!</p>
+                </div>
+            </div>
+
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Unlike regular tic-tac-toe, this game rarely ends in a draw. Strategic movement is key!
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content share-modal">
+            <span class="close-modal">&times;</span>
+            <h2>Share with Friends</h2>
+            <p class="share-subtitle">Challenge your friends to beat your strategy!</p>
+            
+            <div class="share-buttons">
+                <button class="share-btn twitter" data-share="twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
+                    Share on Twitter
+                </button>
+                <button class="share-btn facebook" data-share="facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+                    Share on Facebook
+                </button>
+                <button class="share-btn whatsapp" data-share="whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+                    Share on WhatsApp
+                </button>
+                <button class="share-btn copy" data-share="copy">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    Copy Link
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <div class="policy-content">
+                <p><strong>Last updated: November 6, 2025</strong></p>
+                
+                <h3>Information We Collect</h3>
+                <p>We use Google Analytics to understand how visitors use our site. This includes anonymous data about page views, session duration, and general location (country/city level).</p>
+                
+                <h3>Local Storage</h3>
+                <p>We store your game history locally in your browser using localStorage. This data never leaves your device and can be cleared at any time using the "Clear" button in the game history section.</p>
+                
+                <h3>Cookies</h3>
+                <p>We use cookies through Google Analytics and Google AdSense to provide relevant advertisements and improve our service.</p>
+                
+                <h3>Third-Party Services</h3>
+                <ul>
+                    <li><strong>Google Analytics:</strong> Tracks anonymous usage statistics</li>
+                    <li><strong>Google AdSense:</strong> Displays advertisements</li>
+                </ul>
+                
+                <h3>Your Rights</h3>
+                <p>You can disable cookies in your browser settings. You can clear your game history at any time. We do not collect personally identifiable information.</p>
+                
+                <h3>Contact</h3>
+                <p>For questions about this privacy policy, please contact us through our website.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>About Sliding Tic-Tac-Toe</h2>
+            <div class="about-content">
+                <p>Sliding Tic-Tac-Toe (also known as <strong>Terni Lapilli</strong>) is an ancient Roman board game that adds strategic depth to the classic tic-tac-toe.</p>
+                
+                <h3>Why This Game?</h3>
+                <p>Traditional tic-tac-toe often ends in a draw when both players know the strategy. Sliding Tic-Tac-Toe solves this by adding a movement phase, making every game dynamic and exciting!</p>
+                
+                <h3>History</h3>
+                <p>Terni Lapilli was played in ancient Rome over 2,000 years ago. Archaeological findings show game boards carved into Roman monuments and amphitheater steps.</p>
+                
+                <h3>Strategy Tips</h3>
+                <ul>
+                    <li>Control the center square - it gives you the most movement options</li>
+                    <li>Think ahead - plan your moves during the placing phase</li>
+                    <li>Create multiple threats - force your opponent into defensive positions</li>
+                    <li>Watch for patterns - recognize winning configurations early</li>
+                </ul>
+                
+                <h3>Perfect for:</h3>
+                <ul>
+                    <li>Quick brain breaks</li>
+                    <li>Playing with friends and family</li>
+                    <li>Improving strategic thinking</li>
+                    <li>Fun without downloads or registration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

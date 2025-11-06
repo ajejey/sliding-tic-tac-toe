@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sliding-tic-tac-toe.com/sitemap.xml
