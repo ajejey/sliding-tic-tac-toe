@@ -174,10 +174,19 @@ class SlidingTicTacToe {
         const aboutModal = document.getElementById('aboutModal');
         const privacyLink = document.getElementById('privacyLink');
         const aboutLink = document.getElementById('aboutLink');
+        const howToPlayLink = document.getElementById('howToPlayLink');
         
-        // How to Play modal (only if button exists)
+        // How to Play modal (button or footer link)
         if (this.howToPlayBtn) {
             this.howToPlayBtn.addEventListener('click', () => {
+                this.howToPlayModal.classList.add('active');
+                this.trackEvent('modal_open', 'how_to_play');
+            });
+        }
+        
+        if (howToPlayLink && this.howToPlayModal) {
+            howToPlayLink.addEventListener('click', (e) => {
+                e.preventDefault();
                 this.howToPlayModal.classList.add('active');
                 this.trackEvent('modal_open', 'how_to_play');
             });
